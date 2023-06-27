@@ -1,5 +1,5 @@
 {
-  "name": "packageName",
+  "name": "utilscommandts",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,6 +9,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "really-relaxed-json": "^0.3.2"
+    "inquirer": "^9.2.7"
+  },
+  "devDependencies": {
+    "@types/inquirer": "^9.0.3"
   }
 }
