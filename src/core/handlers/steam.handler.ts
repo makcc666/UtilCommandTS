@@ -8,7 +8,7 @@ export class SteamHandler {
 	}
 
 	processOutput(steam: ChildProcessWithoutNullStreams) {
-		steam.stdout.on('data', (data: any) => {
+		steam.stderr.on('data', (data: any) => {
 			this.logger.log(data.toString());
 		})
 
