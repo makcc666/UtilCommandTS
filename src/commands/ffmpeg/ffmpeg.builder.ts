@@ -1,16 +1,9 @@
-enum EImageFormat {
-	Png = 'png',
-	Jpeg = 'jpeg'
-}
 
-interface IResolution {
+export interface IVideoSize {
 	width: number;
 	height: number;
 }
 
-interface IImageConversion extends IResolution {
-	format: EImageFormat;
-}
 
 export class FfmpegGBuilder {
 	private inputPath: string;
@@ -25,7 +18,7 @@ export class FfmpegGBuilder {
 		return this;
 	}
 
-	setVideoSize(resolution: IResolution): FfmpegGBuilder {
+	setVideoSize(resolution: IVideoSize): FfmpegGBuilder {
 		this.options.set('-s', `${resolution.width}x${resolution.height}`)
 		return this;
 	}
