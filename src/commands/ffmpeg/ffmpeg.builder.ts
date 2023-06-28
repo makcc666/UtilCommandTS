@@ -1,8 +1,4 @@
-
-export interface IVideoSize {
-	width: number;
-	height: number;
-}
+import {IFfmpegVideoSize} from "./ffmpeg.types.js";
 
 
 export class FfmpegBuilder {
@@ -18,7 +14,7 @@ export class FfmpegBuilder {
 		return this;
 	}
 
-	setVideoSize(resolution: IVideoSize): FfmpegBuilder {
+	setVideoSize(resolution: IFfmpegVideoSize): FfmpegBuilder {
 		this.options.set('-s', `${resolution.width}x${resolution.height}`)
 		return this;
 	}
