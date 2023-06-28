@@ -12,7 +12,7 @@ export class SteamHandler {
 			this.logger.log(data.toString());
 		})
 
-		steam.stderr.on('data', (data: any) => {
+		steam.stderr.on('error', (data: any) => {
 			this.logger.error(data.toString());
 		})
 		steam.on('close', () => {
