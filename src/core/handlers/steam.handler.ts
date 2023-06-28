@@ -8,16 +8,18 @@ export class SteamHandler {
 	}
 
 	processOutput(steam: ChildProcessWithoutNullStreams) {
-		steam.stderr.on('data', (data: any) => {
+		steam.stdout.on('data', (data: any) => {
 			this.logger.log(data.toString());
 		})
 
-		steam.stderr.on('error', (data: any) => {
+		steam.stderr.on('data', (data: any) => {
 			this.logger.error(data.toString());
 		})
 		steam.on('close', () => {
 			this.logger.end();
 		})
-
+		steam.on('error', (err) => {
+			this.logger.error(err.toString());
+		})
 	}
 }
