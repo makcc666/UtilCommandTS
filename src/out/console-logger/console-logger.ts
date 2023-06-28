@@ -1,6 +1,6 @@
 import {ISteamLogger} from "../../core/handlers/steam-logger-interface.js";
 
-class ConsoleLogger implements ISteamLogger {
+export class ConsoleLogger implements ISteamLogger {
 	private static logger: ConsoleLogger;
 
 	public static getInstance() {
