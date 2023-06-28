@@ -5,7 +5,7 @@ export interface IVideoSize {
 }
 
 
-export class FfmpegGBuilder {
+export class FfmpegBuilder {
 	private inputPath: string;
 	private options: Map<string, string> = new Map();
 
@@ -13,12 +13,12 @@ export class FfmpegGBuilder {
 		this.options.set('-c:v', 'libx264');
 	}
 
-	input(inputPath: string): FfmpegGBuilder {
+	input(inputPath: string): FfmpegBuilder {
 		this.inputPath = inputPath;
 		return this;
 	}
 
-	setVideoSize(resolution: IVideoSize): FfmpegGBuilder {
+	setVideoSize(resolution: IVideoSize): FfmpegBuilder {
 		this.options.set('-s', `${resolution.width}x${resolution.height}`)
 		return this;
 	}
